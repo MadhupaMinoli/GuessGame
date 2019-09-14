@@ -1,0 +1,26 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<style>
+	body{text-align: center}
+	form {text-align: -webkit-center;
+		border-style: inset;
+		margin:100px;
+	}
+</style>
+<body>
+	<h1> Word text file upload page</h1>
+
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/">
+			<table>
+				<tr><td>Browse a text file:</td><td><input type="file" name="file" accept="text/plain" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+			</table>
+		</form>
+	</div>
+
+	<div th:if="${UploadMessage}">
+		<h2 th:text="${UploadMessage}"/>
+	</div>
+</body>
+</html>
